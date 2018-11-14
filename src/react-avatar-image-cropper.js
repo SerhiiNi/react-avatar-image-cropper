@@ -456,9 +456,6 @@ class AvatarImageCropper extends Component {
         crop_canvas.getContext('2d').drawImage(this.img, -this.state.relX / ratio, -this.state.relY / ratio, this.img2D.width, this.img2D.height, 0, 0, this.state.sizeW, this.state.sizeH);
         crop_canvas.toBlob((blob) => {
             this.ele.children[0].children[1].value = ""
-            this.setState({
-                preview: null
-            })
             blob.name = this.filename;
             this.props.apply(blob);
         });
@@ -599,7 +596,7 @@ class AvatarImageCropper extends Component {
 /* canvas-toBlob.js
  * A canvas.toBlob() implementation.
  * 2016-05-26
- * 
+ *
  * By Eli Grey, http://eligrey.com and Devin Samarin, https://github.com/eboyjr
  * License: MIT
  *   See https://github.com/eligrey/canvas-toBlob.js/blob/master/LICENSE.md
@@ -724,6 +721,3 @@ class AvatarImageCropper extends Component {
 
 
 export default AvatarImageCropper;
-
-
-
